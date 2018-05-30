@@ -11,3 +11,4 @@
 * TODO Create Answer
 * TODO Right answer
 * TODO Fix styles
+* TODO Fix keyboard in Auth, CreateQuestion, GreateAnswer.

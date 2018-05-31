@@ -2,6 +2,13 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../../../styles/index';
 
 const styles = StyleSheet.create({
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 200,
+    backgroundColor: colors.white,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

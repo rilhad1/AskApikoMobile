@@ -13,7 +13,11 @@ const SignUpScreen = ({
   password,
   onChange,
 }) => (
-  <ScrollView contentContainerStyle={s.container}>
+  <ScrollView
+    contentContainerStyle={s.container}
+    keyboardShouldPersistTaps="handled"
+    scrollEnabled
+  >
     <View style={s.top}>
       <View style={s.titleContainer}>
         <Text style={s.title}>Sign Up</Text>

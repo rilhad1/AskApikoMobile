@@ -4,6 +4,7 @@ import { colors } from '../../../../styles/index';
 const styles = StyleSheet.create({
   tags: {
     flex: 1,
+    flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6,
     paddingVertical: 2,
     marginRight: 6,
+    marginTop: 5,
     //  fontFamily: 'Helvetica Neue',
     fontSize: 13,
   },

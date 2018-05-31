@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { ScrollView, FlatList } from 'react-native';
 import T from 'prop-types';
 import { HeaderLogo, Separator } from '../../components';
 import { AnswerListHeader, AnswerItem, EmptyList, Footer } from './components';
@@ -14,7 +14,11 @@ const QuestionScreen = ({
   id,
   isAuthorized,
 }) => (
-  <View style={s.container}>
+  <ScrollView
+    contentContainerStyle={s.container}
+    keyboardShouldPersistTaps="handled"
+    scrollEnabled
+  >
     <FlatList
       data={answers}
       refreshing={false}
@@ -34,7 +38,7 @@ const QuestionScreen = ({
       )}
       onEndReachedThreshold={0.7}
     />
-  </View>
+  </ScrollView>
 );
 
 QuestionScreen.navigationOptions = () => ({

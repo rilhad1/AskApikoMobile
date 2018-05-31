@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   image: {
     resizeMode: 'contain',
     height: 22,
-//    width: 92,
   },
 });
 

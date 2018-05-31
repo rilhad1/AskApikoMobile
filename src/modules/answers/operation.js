@@ -26,11 +26,9 @@ export const getAnswersByQuestionId = id => async (dispatch, getState) => {
 
 export const createAnswer = ({ title, description, questionId }) => async () => {
   try {
-    console.log('CREATE_ANSWER', { title, description, questionId })
-
     await Api.createAnswer({ title, description, questionId });
   } catch (err) {
     console.log('CREATE_ANSWER_ERROR', err);
-    // throw new Error('Create answer Error');
+    throw new Error('Create answer Error');
   }
 };

@@ -4,8 +4,8 @@ import { colors } from '../../../../styles/index';
 
 const styles = StyleSheet.create({
   authContainer: {
-    flex: 1,
-    justifyContent: 'center',
+    // flex: 1,
+    // justifyContent: 'center',
   },
   unAuthContainer: {
     flex: 1,

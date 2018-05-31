@@ -30,22 +30,13 @@ if (__DEV__) { // eslint-disable-line
       }),
     ),
   );
-  // console.log('sto:', store.getState().auth);
 
-  store.subscribe(() => {
-    console.log('Is Authorized?:', store.getState().app);
-  });
 } else {
   store = createStore(
     combineReducers(reducers),
     {},
     applyMiddleware(navigationMiddleware, thunk),
   );
-  // console.log('sto:', store.getState());
-
-  // store.subscribe(() => {
-  //   console.log('store:', store.getState());
-  // });
 }
 
 export default store;

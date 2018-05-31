@@ -1,5 +1,6 @@
 import React from 'react';
 import T from 'prop-types';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { View, TouchableOpacity, Text } from 'react-native';
 import s from './styles';
 import { Separator, CreateQuestionInput } from '../../../../components';
@@ -10,7 +11,7 @@ const AuthorizedFooter = ({
   onChange,
   submitAnswer,
 }) => (
-  <View style={s.authContainer}>
+  <KeyboardAwareScrollView style={s.authContainer}>
     <View>
       <Separator />
       <CreateQuestionInput
@@ -25,7 +26,7 @@ const AuthorizedFooter = ({
         <Text style={s.textBtn}>Submit Answer</Text>
       </TouchableOpacity>
     </View>
-  </View>
+  </KeyboardAwareScrollView>
 );
 
 const UnauthorizedFooter = ({ navigateToSignUp }) => (

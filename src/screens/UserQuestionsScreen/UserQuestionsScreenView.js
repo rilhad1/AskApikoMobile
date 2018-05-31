@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, ActivityIndicator } from 'react-native';
 import T from 'prop-types';
 import { DrawerButton, Separator, HeaderLogo, SortButton } from '../../components';
 import { QuestionItem, ListHeader, EmptyList } from './components';
-import { headerStyle } from '../../styles';
+import { colors, headerStyle} from '../../styles';
 import s from './styles';
 
 const UserQuestionsScreen = ({
@@ -13,6 +13,8 @@ const UserQuestionsScreen = ({
   getQuestions,
   getQuestionsMore,
   isAuthorized,
+  isLoading,
+  isLoadingMore,
 }) => (
   <View style={s.container}>
     <FlatList
@@ -20,8 +22,19 @@ const UserQuestionsScreen = ({
       refreshing={false}
       onRefresh={getQuestions}
       ListHeaderComponent={<ListHeader />}
-      ListEmptyComponent={<EmptyList navigation={navigation} isAuthorized={isAuthorized} />}
+      ListEmptyComponent={
+        <EmptyList
+          isLoading={isLoading}
+          navigation={navigation}
+          isAuthorized={isAuthorized}
+        />}
       ItemSeparatorComponent={Separator}
+      ListFooterComponent={
+        isLoadingMore && <ActivityIndicator
+          size={30 || 'small'}
+          color={colors.orange}
+        />
+      }
       keyExtractor={item => (`${item._id}-${item.title}`)}
       renderItem={({ item }) => (
         <QuestionItem
@@ -53,6 +66,8 @@ UserQuestionsScreen.propTypes = {
   getQuestionsMore: T.func,
   getQuestions: T.func,
   isAuthorized: T.bool,
+  isLoading: T.bool,
+  isLoadingMore: T.bool,
 };
 
 export default UserQuestionsScreen;

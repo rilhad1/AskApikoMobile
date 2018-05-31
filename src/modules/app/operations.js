@@ -20,6 +20,7 @@ export const isAuthorization = isAuthorized => async (dispatch) => {
     }
   } catch (err) {
     console.log(err);
+    throw new Error('Error');
   }
 };
 
@@ -42,6 +43,7 @@ export const initialization = () => async (dispatch) => {
     }
   } catch (err) {
     console.log('err', err);
+    throw new Error('Initialization Error');
   }
 };
 

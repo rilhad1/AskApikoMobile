@@ -1,14 +1,18 @@
 import React from 'react';
-import T from 'prop-types'; // eslint-disable-line
-import { Text } from 'react-native';
+import T from 'prop-types';
+import { ActivityIndicator } from 'react-native';
 import Modal from 'react-native-modal';
+import { colors } from '../../styles';
 import s from './styles';
 
 const LoadingModal = ({
   isVisible,
 }) => (
-  <Modal isVisible={isVisible} >
-    <Text>Loading.....</Text>
+  <Modal style={s.spinner} isVisible={isVisible} >
+    <ActivityIndicator
+      size={70 || 'large'}
+      color={colors.orange}
+    />
   </Modal>
 );
 

@@ -11,7 +11,6 @@ class Api {
   }
 
   signUp({ username, password, email }) {
-    console.log('baseURL1', this._baseUrl);
     return axios.post(`${this._baseUrl}/auth/sign-up`, {
       email,
       username: email,
@@ -36,6 +35,13 @@ class Api {
       `${this._baseUrl}/questions?limit=${limit}&&skip=${skip}`,
     );
   }
+
+  searchQuestions({ search = '' } = {}) {
+    return axios.get(
+      `${this._baseUrl}/questions?search=${search}`,
+    );
+  }
+
   getAnswersByQuestionId({ id }){
     return axios.get(
       `${this._baseUrl}/questions/${id}/answers`,

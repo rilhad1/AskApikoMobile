@@ -4,6 +4,7 @@ import { colors } from '../../../../styles/index';
 const styles = StyleSheet.create({
   tags: {
     flex: 1,
+    flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.questionItem.tagsBackground,
     paddingHorizontal: 6,
     paddingVertical: 2,
+    marginTop: 5,
     marginRight: 6,
     //  fontFamily: 'Helvetica Neue',
     fontSize: 13,
